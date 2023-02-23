@@ -1,8 +1,8 @@
 # ifndef HashMap
 # define HashMap
 
-# define KeyType char *
-# define ValueType int
+#define KeyType char *
+#define ValueType int
 
 /*
  this is useful for you in answering the questions. if your write your code such

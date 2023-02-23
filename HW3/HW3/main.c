@@ -19,7 +19,26 @@ char* getWord(FILE *file); /* prototype */
 /****************************************/
 
 int main (int argc, const char * argv[]) {
+    FILE * file = fopen(argv[1],'r');
     /*Write this function*/
+    struct hashMap * ht;
+    initMap(ht, 10);
+    int i;
+    for(i = 0; i < ht->tableSize; i++) {
+        if(ht->table[i]==NULL){
+            printf("EMPTY: %d",i);
+        };
+    }
+
+    char* key = getWord(file);
+    struct hashLink * oldLink = atMap();
+
+    if(oldLink == NULL) {
+        insertMap(ht, key, 1);
+    }
+    else {
+        oldLink->value++;
+    }
 }
 
 

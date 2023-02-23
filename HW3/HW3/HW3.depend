@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1677182898 source:c:\users\bestl\documents\program\c\cs_261\hw3\hw3\main.c
+	<assert.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"hashMap.h"
+
+1677182146 c:\users\bestl\documents\program\c\cs_261\hw3\hw3\hashmap.h
+
+1677185386 source:c:\users\bestl\documents\program\c\cs_261\hw3\hw3\hashmap.c
+	<stdlib.h>
+	"hashMap.h"
+	"structs.h"
+	<string.h>
+	<assert.h>
+
+1675116921 c:\users\bestl\documents\program\c\cs_261\hw3\hw3\structs.h
+	"type.h"
+
+1675116920 c:\users\bestl\documents\program\c\cs_261\hw3\hw3\type.h
+
