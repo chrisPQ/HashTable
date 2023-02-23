@@ -31,6 +31,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../../../../../Downloads/hashMap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Headers/hashMap.h" />
+		<Unit filename="../Headers/structs.h" />
+		<Unit filename="../Headers/type.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
