@@ -19,10 +19,60 @@ char* getWord(FILE *file); /* prototype */
 /****************************************/
 
 int main (int argc, const char * argv[]) {
+
+    FILE * file = fopen(argv[1],"r");
     /*Write this function*/
+    int i;
+    char* key;
+    struct hashLink * oldLink;
+    int* incrementPointer;
+    struct hashMap * ht = (struct hashMap*) malloc(sizeof(struct hashMap));
+    
+    initMap(ht, 12);
+
+    
+    key = getWord(file);
+    while(key != NULL) {
+      
+      /*oldLink = ht->table[hashIndex];*/
+  
+      if(!containsKey(ht, key)) {
+          insertMap(ht, key, 1);
+      }
+      else {
+        incrementPointer = atMap(ht, key);
+        if(incrementPointer != NULL) {
+          *incrementPointer = *incrementPointer + 1;
+        }
+      }
+      
+      key = getWord(file);
+    }
+    
+    printf("%d\n",ht->tableSize);
+    for(i = 0; i < ht->tableSize; i++) {
+      oldLink = ht->table[i];
+      if(oldLink != NULL) {
+        printf("%s : %d | %d\n ",oldLink->key,oldLink->value,i);
+        while(oldLink->next != NULL) {
+          printf("%s : %d | %d\n ",oldLink->next->key,oldLink->next->value,i);
+          oldLink=oldLink->next;
+        }
+      }
+      else {
+        printf("%s | %d\n", "NULL",i);
+      }
+    }
+    
+    freeMap(ht);
+    
+    fclose(file);
+    
+    
+    
+    return 1;
+    
 }
-
-
 
 
 char* getWord(FILE *file)
