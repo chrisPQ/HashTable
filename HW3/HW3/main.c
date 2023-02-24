@@ -28,6 +28,9 @@ int main (int argc, const char * argv[]) {
     int* incrementPointer;
     struct hashMap * ht = (struct hashMap*) malloc(sizeof(struct hashMap));
     
+    
+    assert(file != NULL);
+    
     initMap(ht, 12);
 
     
@@ -44,23 +47,22 @@ int main (int argc, const char * argv[]) {
         if(incrementPointer != NULL) {
           *incrementPointer = *incrementPointer + 1;
         }
+        free(key);
       }
-      
       key = getWord(file);
     }
     
-    printf("%d\n",ht->tableSize);
     for(i = 0; i < ht->tableSize; i++) {
       oldLink = ht->table[i];
       if(oldLink != NULL) {
-        printf("%s : %d | %d\n ",oldLink->key,oldLink->value,i);
+        printf("%s : %d \n ",oldLink->key,oldLink->value);
         while(oldLink->next != NULL) {
-          printf("%s : %d | %d\n ",oldLink->next->key,oldLink->next->value,i);
+          printf("%s : %d \n ",oldLink->next->key,oldLink->next->value);
           oldLink=oldLink->next;
         }
       }
       else {
-        printf("%s | %d\n", "NULL",i);
+        /*printf("%s | %d\n", "NULL",i);*/
       }
     }
     

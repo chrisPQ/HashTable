@@ -106,7 +106,7 @@ ValueType* atMap (struct hashMap * ht, KeyType k)
     int hashIndex = (int)(labs(hash)%ht->tableSize);
     struct hashLink * indexLink = ht->table[hashIndex];
 
-    while(indexLink->next != NULL) {
+    while(indexLink != NULL) {
         if(strcmp(indexLink->key, k)==0) return &indexLink->value;
         indexLink = indexLink->next;
     }
